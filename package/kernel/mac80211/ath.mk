@@ -187,7 +187,8 @@ define KernelPackage/ath9k-common
   DEPENDS+= @PCI_SUPPORT||USB_SUPPORT||TARGET_ar71xx||TARGET_ath79 +kmod-ath +@DRIVER_11N_SUPPORT +@DRIVER_11W_SUPPORT
   FILES:= \
 	$(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/ath9k_common.ko \
-	$(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/ath9k_hw.ko
+	$(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/ath9k_hw.ko \
+	$(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/ar9003_csi.ko
 endef
 
 define KernelPackage/ath9k

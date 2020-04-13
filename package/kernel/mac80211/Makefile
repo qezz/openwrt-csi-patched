@@ -461,6 +461,9 @@ define Build/Prepare
 		$(PKG_BUILD_DIR)/backport-include/linux/bcm47xx_nvram.h
 
 	echo 'compat-wireless-$(PKG_VERSION)-$(PKG_RELEASE)-$(REVISION)' > $(PKG_BUILD_DIR)/compat_version
+
+	$(CP) ./csi/ar9003_csi.c  $(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/
+	$(CP) ./csi/ar9003_csi.h  $(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/
 endef
 
 ifneq ($(CONFIG_PACKAGE_kmod-cfg80211)$(CONFIG_PACKAGE_kmod-lib80211),)
